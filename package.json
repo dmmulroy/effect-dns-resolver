@@ -1,0 +1,16 @@
+{
+  "name": "effect-dns-resolver",
+  "module": "src/main.ts",
+  "type": "module",
+  "devDependencies": {
+    "@effect/language-service": "^0.17.1",
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@effect/platform": "^0.84.2",
+    "effect": "^3.16.2"
+  }
+}
