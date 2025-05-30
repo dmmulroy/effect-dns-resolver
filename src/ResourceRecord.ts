@@ -20,6 +20,7 @@ export interface ResourceRecord {
 	readonly type:
 		| "A"
 		| "AAAA"
+		| "CAA"
 		| "CNAME"
 		| "MX"
 		| "NS"
@@ -39,6 +40,12 @@ export interface ARecord extends ResourceRecord {
 export interface AAAARecord extends ResourceRecord {
 	readonly address: IpAddressV6;
 	readonly nameserver: IpAddressV6;
+}
+
+export interface CAARecord extends ResourceRecord {
+	readonly flags: number;
+	readonly tag: string;
+	readonly value: string;
 }
 
 export interface CNAMERecord extends ResourceRecord {
@@ -77,4 +84,19 @@ export interface SRVRecord extends ResourceRecord {
 
 export interface TXTRecord extends ResourceRecord {
 	readonly text: string;
+}
+export interface NAPTRRecord extends ResourceRecord {
+	readonly order: number;
+	readonly preference: number;
+	readonly flags: string;
+	readonly services: string;
+	readonly regexp: string;
+	readonly replacement: string;
+}
+
+export interface TLSARecord extends ResourceRecord {
+	readonly usage: number;
+	readonly selector: number;
+	readonly matchingType: number;
+	readonly certificateAssociationData: string;
 }
